@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Commissioner", sans-serif;
+}
+body {
+	font-size: 16px;
+}
+
+header {
+	background-image: url(images/image-hero-desktop.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 56.6vh;
+	width: 100%;
+}
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+nav ul {
+	display: flex;
+	margin-right: 3rem;
+	list-style-type: none;
+}
+nav img {
+	padding: 4rem 13rem;
+}
+nav a {
+	text-decoration: none;
+	margin-right: 5rem;
+	text-decoration: none;
+	color: hsl(0, 100%, 100%);
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: hsl(0, 0%, 98%);
+}
+.topsquare {
+	width: 100vh;
+	height: 30vh;
+	background-color: hsl(0, 100%, 100%);
+	margin-top: -8rem;
+	border-radius: 12px;
+	text-align: center;
+}
+.topsquare h1 {
+	margin-top: 2rem;
+}
+.topsquare p {
+	color: hsl(0, 0%, 48%);
+	margin-top: 1rem;
+}
+.logo {
+	background: url(images/logo-mastercraft.svg) no-repeat center center;
+	height: 60px;
+	width: 100vh;
+	margin-top: -2rem;
+}
+.buttonstop {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 15vh;
+	width: 100vh;
+}
+.topbtn {
+	width: 250px;
+	height: 55px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+}
+.bookmark {
+	background-image: url(images/icon-bookmark.svg);
+	background-repeat: no-repeat;
+	width: 250px;
+	height: 56px;
+	border-radius: 300px;
+	color: hsl(0, 0%, 48%);
+	background-color: hsl(0, 0%, 98%);
+	border: none;
+	cursor: pointer;
+	font-weight: 700;
+}
+.middlesquare {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vh;
+	height: 20vh;
+	margin-top: 2rem;
+	background-color: hsl(0, 100%, 100%);
+}
+.values {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 195px;
+}
+.valueBacked {
+	grid-area: 1 / 1 / 2 / 2;
+}
+.subvalue {
+	grid-area: 2 / 1 / 3 / 2;
+}
+.totalBackers {
+	grid-area: 1 / 2 / 2 / 3;
+}
+.daysLeft {
+	grid-area: 1 / 3 / 2 / 4;
+}
+.totalsub {
+	grid-area: 2 / 2 / 3 / 3;
+}
+.subdays {
+	grid-area: 2 / 3 / 3 / 4;
+}
