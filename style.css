@@ -7,7 +7,9 @@
 body {
 	font-size: 16px;
 }
-
+html {
+	scroll-behavior: smooth;
+}
 header {
 	background-image: url(images/image-hero-desktop.jpg);
 	background-size: contain;
@@ -44,12 +46,14 @@ nav a {
 	background-color: hsl(0, 0%, 98%);
 }
 .topsquare {
+	display: none;
 	width: 100vh;
 	height: 30vh;
 	background-color: hsl(0, 100%, 100%);
 	margin-top: -8rem;
 	border-radius: 12px;
 	text-align: center;
+	border: 1px solid hsl(0, 0%, 91%);
 }
 .topsquare h1 {
 	margin-top: 2rem;
@@ -97,32 +101,288 @@ nav a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	width: 100vh;
 	height: 20vh;
 	margin-top: 2rem;
 	background-color: hsl(0, 100%, 100%);
+	border: 1px solid hsl(0, 0%, 91%);
 }
 .values {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	grid-column-gap: 195px;
+	grid-column-gap: 60px;
 }
 .valueBacked {
 	grid-area: 1 / 1 / 2 / 2;
+	border-right: 1px solid hsl(0, 0%, 48%);
+	height: 50px;
+	width: 150px;
 }
 .subvalue {
 	grid-area: 2 / 1 / 3 / 2;
+	border-right: 1px solid hsl(0, 0%, 48%);
+	height: 20px;
+	width: 150px;
 }
 .totalBackers {
 	grid-area: 1 / 2 / 2 / 3;
+	border-right: 1px solid hsl(0, 0%, 48%);
+	height: 50px;
+	width: 150px;
 }
 .daysLeft {
 	grid-area: 1 / 3 / 2 / 4;
+	height: 20px;
+	width: 150px;
 }
 .totalsub {
 	grid-area: 2 / 2 / 3 / 3;
+	border-right: 1px solid hsl(0, 0%, 48%);
+	height: 20px;
+	width: 150px;
 }
 .subdays {
 	grid-area: 2 / 3 / 3 / 4;
+}
+.middlesquare h2 {
+	font-weight: 700;
+}
+.middlesquare p {
+	color: hsl(0, 0%, 48%);
+	font-size: 400;
+}
+.bar {
+	width: 80vh;
+	background-color: hsl(0, 4%, 91%);
+	height: 2vh;
+	border-radius: 50px;
+}
+.progess {
+	width: 50vh;
+	height: 2vh;
+	background-color: hsl(176, 50%, 47%);
+	border-radius: 50px;
+}
+
+.mainbottom {
+	width: 100vh;
+	height: 100%;
+	background-color: hsl(0, 100%, 100%);
+	margin-top: 2rem;
+	border-radius: 12px;
+	border: 1px solid hsl(0, 0%, 91%);
+	padding: 3rem 5rem;
+}
+.mainbottom h3 {
+	font-weight: 700;
+	margin-bottom: 2rem;
+	font-size: 20px;
+}
+.aboutcl p {
+	color: hsl(0, 0%, 48%);
+}
+.standblocks {
+	display: flex;
+
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 5rem;
+}
+.pledge {
+	color: hsl(176, 50%, 47%);
+}
+.navbambo {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-between;
+	padding: 2rem 7rem;
+	margin-bottom: -3rem;
+}
+.bambo {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid hsl(0, 0%, 91%);
+	width: 83vh;
+	height: 25vh;
+	border-radius: 12px;
+}
+.bambocontent p:nth-child(1) {
+	color: hsl(0, 0%, 48%);
+}
+.bambocontent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	margin-left: 7rem;
+}
+.bambolower {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 7rem;
+}
+.bamboNumber,
+.blackeditionNumber {
+	font-size: 20px;
+	font-weight: 700;
+}
+.bamboBtn {
+	width: 150px;
+	height: 45px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
+.bambo span {
+	font-weight: 400;
+	margin-left: -20rem;
+}
+.blackedition {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid hsl(0, 0%, 91%);
+	width: 83vh;
+	height: 25vh;
+	border-radius: 12px;
+	margin-top: 2rem;
+}
+.blacknav {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-between;
+	padding: 2rem 7rem;
+	margin-bottom: -3rem;
+}
+.blackcontent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	width: 80%;
+	margin-left: 7rem;
+}
+.blackcontent p:nth-child(1) {
+	color: hsl(0, 0%, 48%);
+}
+.blackinp {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 7rem;
+}
+.blackinp span {
+	margin-left: -20rem;
+}
+.blackeditionBtn {
+	width: 150px;
+	height: 45px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
+.mahoganyspecial {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid hsl(0, 0%, 91%);
+	width: 83vh;
+	height: 25vh;
+	border-radius: 12px;
+	margin-top: 2rem;
+}
+.mohognaynav {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-between;
+	padding: 2rem 7rem;
+	margin-bottom: -3rem;
+}
+.mohganycontent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	width: 80%;
+	margin-left: 7rem;
+}
+.mohganycontent p:nth-child(1) {
+	color: hsl(0, 0%, 48%);
+}
+.mohahanynmb {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 7rem;
+}
+.mahoganyBtn {
+	width: 150px;
+	height: 45px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+	margin-bottom: 1rem;
+}
+.mohahanynmb span {
+	margin-left: -20rem;
+}
+/* MODAL SECTION */
+.backthis {
+	position: absolute;
+	top: 550px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 90vh;
+	height: 80vh;
+	margin-top: -22rem;
+	background-color: hsl(0, 100%, 100%);
+	border: 1px solid hsl(0, 0%, 91%);
+}
+.navback {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100vh;
+	margin-top: -16rem;
+	padding: 5rem 8rem;
+}
+.navback p {
+	color: hsl(0, 0%, 48%);
+	margin-top: 1rem;
+	font-size: 15px;
+}
+.closemodal {
+	background-image: url(images/icon-close-modal.svg);
+	background-repeat: no-repeat;
+	width: 23px;
+	background-size: contain;
+	cursor: pointer;
+	margin-top: -3rem;
+	margin-right: -3rem;
 }
