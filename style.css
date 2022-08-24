@@ -46,7 +46,6 @@ nav a {
 	background-color: hsl(0, 0%, 98%);
 }
 .topsquare {
-	display: none;
 	width: 100vh;
 	height: 30vh;
 	background-color: hsl(0, 100%, 100%);
