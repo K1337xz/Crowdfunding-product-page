@@ -351,17 +351,24 @@ nav a {
 }
 /* MODAL SECTION */
 .backthis {
-	position: absolute;
-	top: 550px;
-	left: 550px;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	width: 90vh;
+	position: fixed;
+	top: 10vh;
+	left: 25%;
+	width: 100vh;
 	height: 80vh;
-	margin-top: -22rem;
+	margin: 0;
+	padding: 3rem 1.5rem;
+	overflow-y: scroll;
+	outline: none;
+	border: none;
+	box-shadow: 0 0 3rem rgb(0 0 0 / 50%);
+	z-index: 3;
+	overflow-x: hidden;
 	background-color: hsl(0, 100%, 100%);
-	border: 1px solid hsl(0, 0%, 91%);
+	scrollbar-width: none;
+}
+.backthis::-webkit-scrollbar {
+	display: none;
 }
 .navback {
 	display: flex;
@@ -370,7 +377,7 @@ nav a {
 	justify-content: space-between;
 	flex-wrap: wrap;
 	width: 100vh;
-	padding: 5rem 5rem;
+	padding: 2rem 5rem;
 }
 .navback p {
 	color: hsl(0, 0%, 48%);
@@ -383,8 +390,8 @@ nav a {
 	width: 23px;
 	background-size: contain;
 	cursor: pointer;
-	margin-top: -3rem;
-	margin-right: 3rem;
+	margin-top: -4rem;
+	margin-right: -1rem;
 }
 .modal {
 	display: flex;
@@ -397,20 +404,27 @@ nav a {
 	flex-direction: column;
 	border: 1px solid hsl(0, 0%, 91%);
 	width: 83vh;
-	height: 25vh;
+	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
 	padding: 4rem 5rem;
 }
 .noreward label {
-	font-weight: 700;
-	margin-left: 5rem;
 	cursor: pointer;
-	display: flex;
+	color: hsl(0, 0%, 0%);
+	font-weight: 700;
+}
+.noreward label:hover {
+	color: hsl(176, 50%, 47%);
+}
+.noreward input[type="checkbox"]:hover {
+	border: 1px solid hsl(176, 50%, 47%);
 }
 .noreward input[type="checkbox"] {
-	width: 1.3em;
-	height: 1.3em;
+	width: 25px;
+	height: 25px;
+	margin-right: 3rem;
+	margin-left: -3rem;
 	background-color: white;
 	border-radius: 50%;
 	vertical-align: middle;
@@ -420,6 +434,278 @@ nav a {
 	outline: none;
 	cursor: pointer;
 }
-.noreward input[type="checkbox"] {
-	background-color: gray;
+.noreward input[type="checkbox"]:checked {
+	background-color: hsl(176, 50%, 47%);
+	border: 6px solid hsl(0, 100%, 100%);
+	outline: 1px solid hsl(0, 0%, 91%);
+}
+.noreward p {
+	margin-left: 1.7rem;
+	color: hsl(0, 0%, 48%);
+}
+.noreward input.continue {
+	width: 150px;
+	height: 45px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+	margin-top: 2rem;
+}
+.lowernoreward {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.bambostand {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid hsl(0, 0%, 91%);
+	width: 83vh;
+	height: 23vh;
+	border-radius: 12px;
+	margin-top: 2rem;
+	padding: 1rem 5rem;
+}
+.bambostand label {
+	cursor: pointer;
+	color: hsl(0, 0%, 0%);
+	font-weight: 700;
+	margin-right: 11rem;
+}
+.bambostand label:hover {
+	color: hsl(176, 50%, 47%);
+}
+.bambostand input[type="checkbox"]:hover {
+	border: 1px solid hsl(176, 50%, 47%);
+}
+.bambostand input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+	margin-right: 3rem;
+	margin-left: -3rem;
+	background-color: white;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+.bambostand input[type="checkbox"]:checked {
+	background-color: hsl(176, 50%, 47%);
+	border: 6px solid hsl(0, 100%, 100%);
+	outline: 1px solid hsl(0, 0%, 91%);
+}
+
+.topb {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 2rem;
+}
+.lowerbambo {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	border-top: 1px solid hsl(0, 0%, 91%);
+	margin-left: -5rem;
+	margin-right: -5rem;
+}
+.lowerbambo span {
+	margin-left: -15rem;
+}
+.lowerbambo p {
+}
+.bambocon {
+	color: hsl(0, 0%, 48%);
+	margin-left: 1.5rem;
+	margin-bottom: 1rem;
+}
+.pledgebambo {
+	width: 50px;
+	height: 45px;
+}
+.selectLowerBambo {
+	width: 150px;
+	height: 45px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+	margin-top: 1rem;
+	margin-right: -6rem;
+}
+.pledgemodal {
+	color: hsl(176, 50%, 47%);
+	margin-left: 3rem;
+}
+.bamboinpmodal {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 330px;
+	margin-top: 2rem;
+	border-top: 1px solid hsl(0, 0%, 91%);
+}
+.continuebambomodal {
+	width: 130px;
+	height: 45px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+}
+.pledgeBambo {
+	width: 110px;
+	height: 45px;
+	border-radius: 300px;
+	color: hsl(0, 0%, 0%);
+	border: 1px solid hsl(0, 0%, 91%);
+	margin-right: -10rem;
+	font-weight: 700;
+	cursor: pointer;
+	padding-left: 1rem;
+}
+.pledgeBambo::placeholder {
+	padding-left: 1rem;
+}
+.blackedit {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid hsl(0, 0%, 91%);
+	width: 83vh;
+	height: 23vh;
+	border-radius: 12px;
+	margin-top: 2rem;
+	padding: 1rem 5rem;
+}
+.topblack {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 2rem;
+}
+.blackedit label {
+	cursor: pointer;
+	color: hsl(0, 0%, 0%);
+	font-weight: 700;
+	margin-right: 11rem;
+}
+.blackedit label:hover {
+	color: hsl(176, 50%, 47%);
+}
+.blackedit input[type="checkbox"]:hover {
+	border: 1px solid hsl(176, 50%, 47%);
+}
+.blackedit input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+	margin-right: 3rem;
+	margin-left: -3rem;
+	background-color: white;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+.blackedit input[type="checkbox"]:checked {
+	background-color: hsl(176, 50%, 47%);
+	border: 6px solid hsl(0, 100%, 100%);
+	outline: 1px solid hsl(0, 0%, 91%);
+}
+.inpblackmodal {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 330px;
+	margin-top: 2rem;
+	border-top: 1px solid hsl(0, 0%, 91%);
+}
+.pledgeBlack {
+	width: 110px;
+	height: 45px;
+	border-radius: 300px;
+	color: hsl(0, 0%, 0%);
+	border: 1px solid hsl(0, 0%, 91%);
+	margin-right: -10rem;
+	font-weight: 700;
+	cursor: pointer;
+	padding-left: 1rem;
+}
+.continueblackmodal {
+	width: 130px;
+	height: 45px;
+	border-radius: 300px;
+	background-color: hsl(176, 50%, 47%);
+	color: hsl(0, 100%, 100%);
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+}
+.mahoganymodal {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid hsl(0, 0%, 91%);
+	width: 83vh;
+	height: 23vh;
+	border-radius: 12px;
+	margin-top: 2rem;
+	padding: 1rem 5rem;
+}
+.mahoganytop {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 2rem;
+}
+.mahoganymodal label {
+	cursor: pointer;
+	color: hsl(0, 0%, 0%);
+	font-weight: 700;
+	margin-right: 8rem;
+}
+.inpmohagony {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 330px;
+	margin-top: 2rem;
+	border-top: 1px solid hsl(0, 0%, 91%);
+}
+.mahoganymodal label:hover {
+	color: hsl(176, 50%, 47%);
+}
+.mahoganymodal input[type="checkbox"]:hover {
+	border: 1px solid hsl(176, 50%, 47%);
+}
+.mahoganymodal input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+	margin-right: 3rem;
+	margin-left: -3rem;
+	background-color: white;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+.mahoganymodal input[type="checkbox"]:checked {
+	background-color: hsl(176, 50%, 47%);
+	border: 6px solid hsl(0, 100%, 100%);
+	outline: 1px solid hsl(0, 0%, 91%);
+}
+.mahoganyNumber {
+	color: hsl(0, 0%, 0%);
+	font-weight: 700;
 }
