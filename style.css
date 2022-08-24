@@ -16,6 +16,7 @@ header {
 	background-repeat: no-repeat;
 	height: 56.6vh;
 	width: 100%;
+	filter: blur(5px);
 }
 nav {
 	display: flex;
@@ -37,6 +38,7 @@ nav a {
 	color: hsl(0, 100%, 100%);
 }
 .container {
+	filter: blur(5px);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -351,7 +353,7 @@ nav a {
 .backthis {
 	position: absolute;
 	top: 550px;
-	display: none;
+	left: 550px;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -368,8 +370,7 @@ nav a {
 	justify-content: space-between;
 	flex-wrap: wrap;
 	width: 100vh;
-	margin-top: -16rem;
-	padding: 5rem 8rem;
+	padding: 5rem 5rem;
 }
 .navback p {
 	color: hsl(0, 0%, 48%);
@@ -383,5 +384,42 @@ nav a {
 	background-size: contain;
 	cursor: pointer;
 	margin-top: -3rem;
-	margin-right: -3rem;
+	margin-right: 3rem;
+}
+.modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.noreward {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid hsl(0, 0%, 91%);
+	width: 83vh;
+	height: 25vh;
+	border-radius: 12px;
+	margin-top: 2rem;
+	padding: 4rem 5rem;
+}
+.noreward label {
+	font-weight: 700;
+	margin-left: 5rem;
+	cursor: pointer;
+	display: flex;
+}
+.noreward input[type="checkbox"] {
+	width: 1.3em;
+	height: 1.3em;
+	background-color: white;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+}
+.noreward input[type="checkbox"] {
+	background-color: gray;
 }
