@@ -16,7 +16,6 @@ header {
 	background-repeat: no-repeat;
 	height: 56.6vh;
 	width: 100%;
-	filter: blur(5px);
 }
 nav {
 	display: flex;
@@ -38,7 +37,6 @@ nav a {
 	color: hsl(0, 100%, 100%);
 }
 .container {
-	filter: blur(5px);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -366,6 +364,11 @@ nav a {
 	overflow-x: hidden;
 	background-color: hsl(0, 100%, 100%);
 	scrollbar-width: none;
+	visibility: hidden;
+	transform: scale(0.95);
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
 }
 .backthis::-webkit-scrollbar {
 	display: none;
@@ -467,7 +470,7 @@ nav a {
 	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 1rem 5rem;
+	padding: 2rem 5rem;
 }
 .bambostand label {
 	cursor: pointer;
@@ -545,7 +548,7 @@ nav a {
 	margin-left: 3rem;
 }
 .bamboinpmodal {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: space-between;
 	height: 330px;
@@ -584,7 +587,7 @@ nav a {
 	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 1rem 5rem;
+	padding: 2rem 5rem;
 }
 .topblack {
 	display: flex;
@@ -623,7 +626,7 @@ nav a {
 	outline: 1px solid hsl(0, 0%, 91%);
 }
 .inpblackmodal {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: space-between;
 	height: 330px;
@@ -659,7 +662,7 @@ nav a {
 	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 1rem 5rem;
+	padding: 2rem 5rem;
 }
 .mahoganytop {
 	display: flex;
@@ -673,7 +676,7 @@ nav a {
 	margin-right: 8rem;
 }
 .inpmohagony {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: space-between;
 	height: 330px;
