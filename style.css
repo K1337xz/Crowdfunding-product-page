@@ -365,11 +365,14 @@ nav a {
 	background-color: hsl(0, 100%, 100%);
 	scrollbar-width: none;
 	visibility: hidden;
-	transform: scale(0.95);
-	transition-property: opacity, transform;
-	transition-duration: 0.5s;
-	transition-timing-function: ease;
+	transform: scaleY(0);
 }
+.active {
+	transform: scaleY(1);
+	transition: 0.5s ease-in-out;
+	animation: filpV 2s linear infinite;
+}
+
 .backthis::-webkit-scrollbar {
 	display: none;
 }
@@ -410,7 +413,7 @@ nav a {
 	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 4rem 5rem;
+	padding: 2rem 5rem;
 }
 .noreward label {
 	cursor: pointer;
@@ -445,8 +448,10 @@ nav a {
 .noreward p {
 	margin-left: 1.7rem;
 	color: hsl(0, 0%, 48%);
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
-.noreward input.continue {
+.noreward input.continuenorew {
 	width: 150px;
 	height: 45px;
 	border-radius: 300px;
@@ -455,12 +460,6 @@ nav a {
 	border: none;
 	font-weight: 700;
 	cursor: pointer;
-	margin-top: 2rem;
-}
-.lowernoreward {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
 }
 .bambostand {
 	display: flex;
@@ -470,7 +469,16 @@ nav a {
 	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 2rem 5rem;
+	padding: 1rem 5rem;
+}
+
+.lowerno {
+	display: none;
+	align-items: center;
+	justify-content: space-around;
+	border-top: 1px solid hsl(0, 0%, 91%);
+	margin-left: -5rem;
+	margin-right: -5rem;
 }
 .bambostand label {
 	cursor: pointer;
@@ -587,7 +595,7 @@ nav a {
 	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 2rem 5rem;
+	padding: 1rem 5rem;
 }
 .topblack {
 	display: flex;
@@ -662,7 +670,7 @@ nav a {
 	height: 23vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 2rem 5rem;
+	padding: 1rem 5rem;
 }
 .mahoganytop {
 	display: flex;
@@ -711,4 +719,13 @@ nav a {
 .mahoganyNumber {
 	color: hsl(0, 0%, 0%);
 	font-weight: 700;
+}
+
+@keyframes dc {
+	0% {
+		transform: translateX(10vh);
+	}
+	100% {
+		transform: translateX(-50vh);
+	}
 }
