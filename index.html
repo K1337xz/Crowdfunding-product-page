@@ -119,6 +119,8 @@
 								type="button"
 								value="Select Reward"
 								class="bamboBtn"
+								id="bambobtn"
+								
 							/>
 						</div>
 					</div>
@@ -138,11 +140,11 @@
 						<div class="blackinp">
 							<p class="blackeditionNumber">64</p>
 							<span>left</span>
-
 							<input
 								type="button"
 								value="Select Reward"
 								class="blackeditionBtn"
+								id="blackbtn"
 							/>
 						</div>
 					</div>
@@ -167,6 +169,7 @@
 								type="button"
 								value="Select Reward"
 								class="mahoganyBtn"
+								id="mohabtn"
 							/>
 						</div>
 					</div>
@@ -211,7 +214,7 @@
 						
 					</div>
 					</div>
-				<div class="bambostand">
+				<div class="bambostand" >
 					<div class="topb">
 						<label for="bambo">
 							<input
@@ -278,9 +281,10 @@
 						/>
 					</div>
 				</div>
-				<div class="mahoganymodal">
+				<div class="mahoganymodal" id="scrollmhg">
 					<div class="mahoganytop">
 						<label for="mahogany">
+							
 							<input
 								type="checkbox"
 								name="mahogany"
@@ -299,7 +303,7 @@
 						T-Shirt, and a personal thank you. You’ll be added to
 						our Backer member list. Shipping is included.
 					</p>
-					<div class="inpmohagony">
+					<div class="inpmohagony" >
 						<p>Enter your pledge</p>
 						<input
 							type="text"
@@ -313,10 +317,22 @@
 							class="continueblackmodal"
 						/>
 					</div>
+					
 					</form>
 				</div>
 			</div>
 		</div>
+		<!-- success modal -->
+		<div class="mainThanks">
+			<div class="imgthanks"></div>
+			<div class="content">
+				<h3>Thanks for your support!</h3>
+				<p>Your pledge brings us one step closer to
+					sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an
+					email once our campaign is completed.</p>
+				<input type="button" value="Got It" class="gotIt">
+			</div>
+
 		<script src="script.js"></script>
 	</body>
 </html>
