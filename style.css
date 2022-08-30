@@ -452,7 +452,7 @@ nav a {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
-.noreward input.continuenorew {
+.noreward input.continue {
 	width: 150px;
 	height: 45px;
 	border-radius: 300px;
@@ -467,10 +467,16 @@ nav a {
 	flex-direction: column;
 	border: 1px solid hsl(0, 0%, 91%);
 	width: 83vh;
-	height: 23vh;
+	height: 20vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 1rem 5rem;
+	animation-name: slide;
+	animation-delay: 0.5s;
+	animation-timing-function: ease-out;
+}
+.bmb {
+	margin-left: 9rem;
+	margin-right: 3rem;
 }
 
 .lowerno {
@@ -517,6 +523,8 @@ nav a {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 2rem;
+	margin-left: 7rem;
+	margin-top: 2rem;
 }
 .lowerbambo {
 	display: flex;
@@ -560,11 +568,12 @@ nav a {
 	display: none;
 	align-items: center;
 	justify-content: space-between;
-	height: 330px;
-	margin-top: 2rem;
+	margin-top: 1rem;
+	padding: 1rem 2rem;
 	border-top: 1px solid hsl(0, 0%, 91%);
+	transition: 0.5s ease-in-out;
 }
-.continuebambomodal {
+.continue {
 	width: 130px;
 	height: 45px;
 	border-radius: 300px;
@@ -580,7 +589,7 @@ nav a {
 	border-radius: 300px;
 	color: hsl(0, 0%, 0%);
 	border: 1px solid hsl(0, 0%, 91%);
-	margin-right: -10rem;
+	margin-right: -20rem;
 	font-weight: 700;
 	cursor: pointer;
 	padding-left: 1rem;
@@ -593,15 +602,20 @@ nav a {
 	flex-direction: column;
 	border: 1px solid hsl(0, 0%, 91%);
 	width: 83vh;
-	height: 23vh;
+	height: 20vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 1rem 5rem;
+}
+.spc {
+	margin-left: 9rem;
+	margin-right: 6rem;
 }
 .topblack {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 2rem;
+	margin-left: 7rem;
+	margin-top: 2rem;
 }
 .blackedit label {
 	cursor: pointer;
@@ -638,8 +652,8 @@ nav a {
 	display: none;
 	align-items: center;
 	justify-content: space-between;
-	height: 330px;
-	margin-top: 2rem;
+	margin-top: 1rem;
+	padding: 1rem 2rem;
 	border-top: 1px solid hsl(0, 0%, 91%);
 }
 .pledgeBlack {
@@ -653,7 +667,7 @@ nav a {
 	cursor: pointer;
 	padding-left: 1rem;
 }
-.continueblackmodal {
+.continue {
 	width: 130px;
 	height: 45px;
 	border-radius: 300px;
@@ -663,20 +677,25 @@ nav a {
 	font-weight: 700;
 	cursor: pointer;
 }
+.mhm {
+	margin-left: 9rem;
+	margin-right: 3rem;
+}
 .mahoganymodal {
 	display: flex;
 	flex-direction: column;
 	border: 1px solid hsl(0, 0%, 91%);
 	width: 83vh;
-	height: 23vh;
+	height: 20vh;
 	border-radius: 12px;
 	margin-top: 2rem;
-	padding: 1rem 5rem;
 }
 .mahoganytop {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 2rem;
+	margin-left: 7rem;
+	margin-top: 2rem;
 }
 .mahoganymodal label {
 	cursor: pointer;
@@ -689,8 +708,9 @@ nav a {
 	align-items: center;
 	justify-content: space-between;
 	height: 330px;
-	margin-top: 2rem;
+	margin-top: 1rem;
 	border-top: 1px solid hsl(0, 0%, 91%);
+	padding: 1rem 5rem;
 }
 .mahoganymodal label:hover {
 	color: hsl(176, 50%, 47%);
@@ -721,8 +741,14 @@ nav a {
 	color: hsl(0, 0%, 0%);
 	font-weight: 700;
 }
+.errBambo {
+	color: hsl(0, 100%, 48%);
+	font-size: 13px;
+	margin-top: -1rem;
+	margin-left: 2rem;
+}
 /* success modal */
-.mainThanks {
+.mainthanks {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -745,6 +771,10 @@ nav a {
 	transform: scaleY(0);
 	transition: 0.5s ease-in-out;
 	border-radius: 20px;
+}
+.mainactiv {
+	transform: scaleY(1);
+	transition: 0.5s ease-in-out;
 }
 .content p {
 	color: hsl(0, 0%, 48%);
