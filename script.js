@@ -24,10 +24,11 @@ const continueBtn = document.querySelectorAll(".continue");
 const errBambo = document.querySelector(".errBambo");
 const mainthanks = document.querySelector(".mainthanks");
 const gotitButton = document.querySelector(".gotIt");
-let baboNumTop = document.querySelector(".bamboNumber");
-let bamboNumberModal = document.querySelector(".bamboNumberModal");
+let bamboNumber = document.querySelector(".bamboNumber");
+let bamboModal = document.querySelector(".bamboNumberModal");
 const totalBackers = document.querySelector(".totalBackers");
 const valueBacked = document.querySelector(".valueBacked");
+const blackNumber = document.querySelector("blackeditionNumber");
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
 }
@@ -38,29 +39,17 @@ for (let y = 0; y < continueBtn.length; y++) {
 function continuePledge() {
 	let totalwithoutcomma = totalBackers.textContent.replace(",", "");
 	let valuebackedwithoutcomma = valueBacked.textContent.replace(/\$|,/g, "");
-	let babmbonum = baboNumTop.textContent;
-
-	if (inpBambo.checked === true && pledgeBambo.value >= 25) {
-		let minusBambo = parseFloat(babmbonum) - 1;
-		let numTot = parseFloat(totalwithoutcomma) + 1;
-		let value =
-			parseFloat(valuebackedwithoutcomma) + parseFloat(pledgeBambo.value);
-		let valueResoult = value.toString().replace(/.{2}/, "$&,");
-		let resoult = numTot.toString().replace(/.{1}/, "$&,");
-		baboNumTop.innerHTML = `${minusBambo}`;
-		bamboNumberModal.innerHTML = `${minusBambo}`;
-		valueBacked.innerHTML = `$${valueResoult}`;
-		totalBackers.innerHTML = `${resoult}`;
+	let valueBambo =
+		parseFloat(valuebackedwithoutcomma) + parseFloat(pledgeBambo.value);
+	let valueBlack =
+		parseFloat(valuebackedwithoutcomma) + parseFloat(pldedgeBlack.value);
+	let minusBambo = parseFloat(bamboModal.textContent) + 1;
+	if (inpBambo.checked && pledgeBambo.value >= 25) {
 		mainthanks.classList.add("mainactiv");
 		modalWindow.classList.remove("active");
 		modalWindow.style.visibility = "hidden";
-		header.style.filter = "blur(5px)";
-		container.style.filter = "blur(5px)";
-	} else if (inpBambo.checked === true && pledgeBambo.value < 25) {
-		pledgeBambo.style.border = `1px solid hsl(0, 100%, 48%)`;
-		errBambo.innerText = `The pledge must be greater than or equal to 25`;
-	} else if (inpBlack.checked === true && pldedgeBlack.value >= 75) {
-		console.log("chuj");
+		console.log(minusBambo);
+		let localBambo = {};
 	}
 }
 
@@ -202,6 +191,15 @@ function openInputs(input) {
 		blackWindow.style.border = `1px solid hsl(0, 0%, 91%)`;
 	}
 }
+
+window.onload = () => {
+	let localTake = JSON.parse(localStorage.getItem("local"));
+	let localItems = Object.keys(localTake);
+	//baboNumTop.innerHTML = `${localTake[localItems[0]]}`;
+	//bamboNumber.innerHTML = `${localTake[localItems[0]]}`;
+	valueBacked.innerHTML = `$${localTake[localItems[2]]}`;
+	totalBackers.innerHTML = `${localTake[localItems[3]]}`;
+};
 
 gotitButton.addEventListener("click", () => {
 	header.style.filter = "blur(0px)";
