@@ -24,11 +24,10 @@ const continueBtn = document.querySelectorAll(".continue");
 const errBambo = document.querySelector(".errBambo");
 const mainthanks = document.querySelector(".mainthanks");
 const gotitButton = document.querySelector(".gotIt");
-let bamboNumber = document.querySelector(".bamboNumber");
-let bamboModal = document.querySelector(".bamboNumberModal");
+let baboNumTop = document.querySelector(".bamboNumber");
+let bamboNumberModal = document.querySelector(".bamboNumberModal");
 const totalBackers = document.querySelector(".totalBackers");
 const valueBacked = document.querySelector(".valueBacked");
-const blackNumber = document.querySelector("blackeditionNumber");
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
 }
@@ -39,20 +38,48 @@ for (let y = 0; y < continueBtn.length; y++) {
 function continuePledge() {
 	let totalwithoutcomma = totalBackers.textContent.replace(",", "");
 	let valuebackedwithoutcomma = valueBacked.textContent.replace(/\$|,/g, "");
-	let valueBambo =
-		parseFloat(valuebackedwithoutcomma) + parseFloat(pledgeBambo.value);
-	let valueBlack =
-		parseFloat(valuebackedwithoutcomma) + parseFloat(pldedgeBlack.value);
-	let minusBambo = parseFloat(bamboModal.textContent) + 1;
-	if (inpBambo.checked && pledgeBambo.value >= 25) {
+	let babmbonum = baboNumTop.textContent;
+
+	if (inpBambo.checked === true && pledgeBambo.value >= 25) {
+		let minusBambo = parseFloat(babmbonum) - 1;
+		let numTot = parseFloat(totalwithoutcomma) + 1;
+		let totalBacked =
+			parseFloat(valuebackedwithoutcomma) + parseFloat(pledgeBambo.value);
+		let valueOfTotalBacked = totalBacked.toString().replace(/.{2}/, "$&,");
+		let numberOfTotalBackers = numTot.toString().replace(/.{1}/, "$&,");
+		baboNumTop.innerHTML = `${minusBambo}`;
+		bamboNumberModal.innerHTML = `${minusBambo}`;
+		valueBacked.innerHTML = `$${valueOfTotalBacked}`;
+		totalBackers.innerHTML = `${numberOfTotalBackers}`;
+		let localBambo = {
+			totalBackers: numberOfTotalBackers,
+			totalBackeds: valueOfTotalBacked,
+			bamboNumberModal: minusBambo,
+			mamboNumber: minusBambo,
+		};
+		localStorage.setItem("localBambo", JSON.stringify(localBambo));
 		mainthanks.classList.add("mainactiv");
 		modalWindow.classList.remove("active");
 		modalWindow.style.visibility = "hidden";
-		console.log(minusBambo);
-		let localBambo = {};
+		header.style.filter = "blur(5px)";
+		container.style.filter = "blur(5px)";
+		let getItemsSotrage = JSON.parse(localStorage.getItem("localBambo"));
+	} else if (inpBambo.checked === true && pledgeBambo.value < 25) {
+		pledgeBambo.style.border = `1px solid hsl(0, 100%, 48%)`;
+		errBambo.innerText = `The pledge must be greater than or equal to 25`;
+	} else if (inpBlack.checked === true && pldedgeBlack.value >= 75) {
+		console.log("chuj");
 	}
 }
 
+window.onload = () => {
+	let localTake = JSON.parse(localStorage.getItem("localBambo"));
+	let localItems = Object.keys(localTake);
+	baboNumTop.innerHTML = `${localTake[localItems[2]]}`;
+	bamboNumberModal.innerHTML = `${localTake[localItems[2]]}`;
+	valueBacked.innerHTML = `$${localTake[localItems[1]]}`;
+	totalBackers.innerHTML = `${localTake[localItems[0]]}`;
+};
 function showModal() {
 	let num = this.id;
 	if (num === `bambobtn`) {
@@ -191,15 +218,6 @@ function openInputs(input) {
 		blackWindow.style.border = `1px solid hsl(0, 0%, 91%)`;
 	}
 }
-
-window.onload = () => {
-	let localTake = JSON.parse(localStorage.getItem("local"));
-	let localItems = Object.keys(localTake);
-	//baboNumTop.innerHTML = `${localTake[localItems[0]]}`;
-	//bamboNumber.innerHTML = `${localTake[localItems[0]]}`;
-	valueBacked.innerHTML = `$${localTake[localItems[2]]}`;
-	totalBackers.innerHTML = `${localTake[localItems[3]]}`;
-};
 
 gotitButton.addEventListener("click", () => {
 	header.style.filter = "blur(0px)";
