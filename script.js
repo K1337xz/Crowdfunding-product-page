@@ -19,15 +19,23 @@ const standBlocks = document.querySelector(".standblocks");
 const inp = standBlocks.querySelectorAll(`input[type="button"]`);
 const pledgeBambo = document.querySelector(".pledgeBambo");
 const pldedgeBlack = document.querySelector(".pledgeBlack");
+const pledgeMohagony = document.querySelector(".pledgeMohagony");
 const bamboButton = document.querySelector(".continuebambomodal");
 const continueBtn = document.querySelectorAll(".continue");
 const errBambo = document.querySelector(".errBambo");
+const errorBlack = document.querySelector(".errBlack");
 const mainthanks = document.querySelector(".mainthanks");
+const errMoh = document.querySelector(".erorMoha");
 const gotitButton = document.querySelector(".gotIt");
-let baboNumTop = document.querySelector(".bamboNumber");
-let bamboNumberModal = document.querySelector(".bamboNumberModal");
+const baboNumTop = document.querySelector(".bamboNumber");
+const bamboNumberModal = document.querySelector(".bamboNumberModal");
 const totalBackers = document.querySelector(".totalBackers");
 const valueBacked = document.querySelector(".valueBacked");
+const blackedNumberM = document.querySelector(".blackeditionNumberModal");
+const blackedNum = document.querySelector(".blackeditionNumber");
+const mohagonyNumModal = document.querySelector(".mahoganModalNumber");
+const mohagonyNum = document.querySelector(".mahoganyNumber");
+
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
 }
@@ -39,14 +47,15 @@ function continuePledge() {
 	let totalwithoutcomma = totalBackers.textContent.replace(",", "");
 	let valuebackedwithoutcomma = valueBacked.textContent.replace(/\$|,/g, "");
 	let babmbonum = baboNumTop.textContent;
-
+	let blackNum = blackedNumberM.textContent;
+	let mohNum = mohagonyNumModal.textContent;
+	let numTot = parseFloat(totalwithoutcomma) + 1;
+	let numberOfTotalBackers = numTot.toString().replace(/.{1}/, "$&,");
 	if (inpBambo.checked === true && pledgeBambo.value >= 25) {
 		let minusBambo = parseFloat(babmbonum) - 1;
-		let numTot = parseFloat(totalwithoutcomma) + 1;
 		let totalBacked =
 			parseFloat(valuebackedwithoutcomma) + parseFloat(pledgeBambo.value);
 		let valueOfTotalBacked = totalBacked.toString().replace(/.{2}/, "$&,");
-		let numberOfTotalBackers = numTot.toString().replace(/.{1}/, "$&,");
 		baboNumTop.innerHTML = `${minusBambo}`;
 		bamboNumberModal.innerHTML = `${minusBambo}`;
 		valueBacked.innerHTML = `$${valueOfTotalBacked}`;
@@ -55,7 +64,7 @@ function continuePledge() {
 			totalBackers: numberOfTotalBackers,
 			totalBackeds: valueOfTotalBacked,
 			bamboNumberModal: minusBambo,
-			mamboNumber: minusBambo,
+			bamboNumber: minusBambo,
 		};
 		localStorage.setItem("localBambo", JSON.stringify(localBambo));
 		mainthanks.classList.add("mainactiv");
@@ -63,22 +72,110 @@ function continuePledge() {
 		modalWindow.style.visibility = "hidden";
 		header.style.filter = "blur(5px)";
 		container.style.filter = "blur(5px)";
-		let getItemsSotrage = JSON.parse(localStorage.getItem("localBambo"));
+		errBambo.innerText = ``;
+		pledgeBambo.classList.remove(`errorInp`);
 	} else if (inpBambo.checked === true && pledgeBambo.value < 25) {
-		pledgeBambo.style.border = `1px solid hsl(0, 100%, 48%)`;
+		pledgeBambo.classList.add(`errorInp`);
 		errBambo.innerText = `The pledge must be greater than or equal to 25`;
 	} else if (inpBlack.checked === true && pldedgeBlack.value >= 75) {
-		console.log("chuj");
+		let minusBlack = parseFloat(blackNum) - 1;
+		console.log(minusBlack);
+		let totalBlack =
+			parseFloat(valuebackedwithoutcomma) +
+			parseFloat(pldedgeBlack.value);
+		let valueTotal = totalBlack.toString().replace(/.{2}/, "$&,");
+		blackedNum.innerHTML = `${minusBlack}`;
+		blackedNumberM.innerHTML = `${minusBlack}`;
+		valueBacked.innerHTML = `$${valueTotal}`;
+		totalBackers.innerHTML = `${numberOfTotalBackers}`;
+		let localBlack = {
+			totalBackers: numberOfTotalBackers,
+			totalBackeds: valueTotal,
+			bamboNumberModal: minusBlack,
+			bamboNumber: minusBlack,
+		};
+		localStorage.setItem("localBlack", JSON.stringify(localBlack));
+		mainthanks.classList.add("mainactiv");
+		modalWindow.classList.remove("active");
+		modalWindow.style.visibility = "hidden";
+		header.style.filter = "blur(5px)";
+		container.style.filter = "blur(5px)";
+		errorBlack.innerText = ``;
+		pldedgeBlack.classList.remove("errorInp");
+	} else if (inpBlack.checked === true && pldedgeBlack.value < 75) {
+		errorBlack.innerHTML = `The pledge must be greater than or equal to 75`;
+		pldedgeBlack.classList.add("errorInp");
+	} else if (mahogany.checked === true && pledgeMohagony.value >= 200) {
+		let mohText = parseFloat(mohNum) - 1;
+		console.log(mohText);
+		let totalMoh =
+			parseFloat(valuebackedwithoutcomma) +
+			parseFloat(pledgeMohagony.value);
+		let valueTotMoh = totalMoh.toString().replace(/.{2}/, "$&,");
+		let localMoh = {
+			totalBackersMoh: numberOfTotalBackers,
+			totalBackedsMoh: valueTotMoh,
+			bamboNumberModalMoh: mohText,
+			bamboNumberMoh: mohText,
+		};
+		localStorage.setItem("localMoh", JSON.stringify(localMoh));
+		mohagonyNum.innerHTML = `${mohText}`;
+		mohagonyNumModal.innerHTML = `${mohText}`;
+		valueBacked.innerHTML = `$${valueTotMoh}`;
+		totalBackers.innerHTML = `${numberOfTotalBackers}`;
+		mainthanks.classList.add("mainactiv");
+		modalWindow.classList.remove("active");
+		modalWindow.style.visibility = "hidden";
+		header.style.filter = "blur(5px)";
+		container.style.filter = "blur(5px)";
+		errMoh.innerText = ``;
+		pledgeMohagony.classList.remove("errorInp");
 	}
 }
 
 window.onload = () => {
-	let localTake = JSON.parse(localStorage.getItem("localBambo"));
-	let localItems = Object.keys(localTake);
-	baboNumTop.innerHTML = `${localTake[localItems[2]]}`;
-	bamboNumberModal.innerHTML = `${localTake[localItems[2]]}`;
-	valueBacked.innerHTML = `$${localTake[localItems[1]]}`;
-	totalBackers.innerHTML = `${localTake[localItems[0]]}`;
+	let localTakeBa = JSON.parse(localStorage.getItem("localBambo"));
+	let localTakeBlack = JSON.parse(localStorage.getItem("localBlack"));
+	let localTakeMoh = JSON.parse(localStorage.getItem("localMoh"));
+	if (!localTakeBa && localTakeBlack) {
+		let localItemsBlack = Object.keys(localTakeBlack);
+		blackedNum.innerHTML = `${localTakeBlack[localItemsBlack[2]]}`;
+		blackedNumberM.innerHTML = `${localTakeBlack[localItemsBlack[2]]}`;
+		valueBacked.innerHTML = `$${localTakeBlack[localItemsBlack[1]]}`;
+		totalBackers.innerHTML = `${localTakeBlack[localItemsBlack[0]]}`;
+	} else if (!localTakeBa && !localTakeBlack && localTakeMoh) {
+		let localItemMoh = Object.keys(localTakeMoh);
+		mohagonyNum.innerHTML = `${localTakeMoh[localItemMoh[2]]}`;
+		mohagonyNumModal.innerHTML = `${localTakeMoh[localItemMoh[2]]}`;
+		valueBacked.innerHTML = `$${localTakeMoh[localItemMoh[1]]}`;
+		totalBackers.innerHTML = `${localTakeMoh[localItemMoh[0]]}`;
+	}
+	if (localTakeBa) {
+		let localItemsBa = Object.keys(localTakeBa);
+		baboNumTop.innerHTML = `${localTakeBa[localItemsBa[2]]}`;
+		bamboNumberModal.innerHTML = `${localTakeBa[localItemsBa[2]]}`;
+		valueBacked.innerHTML = `$${localTakeBa[localItemsBa[1]]}`;
+		totalBackers.innerHTML = `${localTakeBa[localItemsBa[0]]}`;
+	}
+
+	//items from black
+
+	if (!localTakeBlack) return;
+	if (localTakeBlack) {
+		let localItemsBlack = Object.keys(localTakeBlack);
+		blackedNum.innerHTML = `${localTakeBlack[localItemsBlack[2]]}`;
+		blackedNumberM.innerHTML = `${localTakeBlack[localItemsBlack[2]]}`;
+		valueBacked.innerHTML = `$${localTakeBlack[localItemsBlack[1]]}`;
+		totalBackers.innerHTML = `${localTakeBlack[localItemsBlack[0]]}`;
+	}
+	if (!localTakeMoh) return;
+	if (localTakeMoh) {
+		let localItemMoh = Object.keys(localTakeMoh);
+		mohagonyNum.innerHTML = `${localTakeMoh[localItemMoh[2]]}`;
+		mohagonyNumModal.innerHTML = `${localTakeMoh[localItemMoh[2]]}`;
+		valueBacked.innerHTML = `$${localTakeMoh[localItemMoh[1]]}`;
+		totalBackers.innerHTML = `${localTakeMoh[localItemMoh[0]]}`;
+	}
 };
 function showModal() {
 	let num = this.id;
@@ -133,6 +230,7 @@ function showModal() {
 				}),
 			500
 		);
+		mahoganyWindow.style.height = `25vh`;
 		mahogany.checked = true;
 		inpBlack.checked = false;
 		inpBambo.checked = false;

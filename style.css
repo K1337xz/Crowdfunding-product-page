@@ -228,7 +228,10 @@ nav a {
 	padding: 2rem 7rem;
 }
 .bamboNumber,
-.blackeditionNumber {
+.blackeditionNumber,
+.blackeditionNumberModal,
+.mahoganyNumberM,
+.bamboNumberModal {
 	font-size: 20px;
 	font-weight: 700;
 }
@@ -655,8 +658,20 @@ nav a {
 	margin-top: 1rem;
 	padding: 1rem 2rem;
 	border-top: 1px solid hsl(0, 0%, 91%);
+	margin-left: -16rem;
 }
 .pledgeBlack {
+	width: 110px;
+	height: 45px;
+	border-radius: 300px;
+	color: hsl(0, 0%, 0%);
+	border: 1px solid hsl(0, 0%, 91%);
+	margin-right: -10rem;
+	font-weight: 700;
+	cursor: pointer;
+	padding-left: 1rem;
+}
+.pledgeMohagony {
 	width: 110px;
 	height: 45px;
 	border-radius: 300px;
@@ -741,11 +756,16 @@ nav a {
 	color: hsl(0, 0%, 0%);
 	font-weight: 700;
 }
-.errBambo {
+.errBambo,
+.errBlack,
+.errMoha {
 	color: hsl(0, 100%, 48%);
 	font-size: 13px;
 	margin-top: -1rem;
 	margin-left: 2rem;
+}
+.errorInp {
+	border: 1px solid hsl(0, 100%, 48%);
 }
 /* success modal */
 .mainthanks {
@@ -798,4 +818,3 @@ nav a {
 	margin-top: 3rem;
 	cursor: pointer;
 }
-if(inpBambo.checked && pledgeBambo.valu)
