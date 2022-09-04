@@ -21,6 +21,7 @@ const pledgeBambo = document.querySelector(".pledgeBambo");
 const pldedgeBlack = document.querySelector(".pledgeBlack");
 const pledgeMohagony = document.querySelector(".pledgeMohagony");
 const bamboButton = document.querySelector(".continuebambomodal");
+const bamboWin = document.querySelector(".bambo");
 const continueBtn = document.querySelectorAll(".continue");
 const errBambo = document.querySelector(".errBambo");
 const errorBlack = document.querySelector(".errBlack");
@@ -33,8 +34,10 @@ const totalBackers = document.querySelector(".totalBackers");
 const valueBacked = document.querySelector(".valueBacked");
 const blackedNumberM = document.querySelector(".blackeditionNumberModal");
 const blackedNum = document.querySelector(".blackeditionNumber");
+const blackWin = document.querySelector(".blackedition");
 const mohagonyNumModal = document.querySelector(".mahoganModalNumber");
 const mohagonyNum = document.querySelector(".mahoganyNumber");
+const mohoganyWinSpecial = document.querySelector(".mahoganyspecial");
 
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
@@ -131,12 +134,52 @@ function continuePledge() {
 		errMoh.innerText = ``;
 		pledgeMohagony.classList.remove("errorInp");
 	}
+	if (mohagonyNumModal.textContent === `0`) {
+		mohoganyWinSpecial.classList.add(`outoff`);
+		mahoganyWindow.classList.add(`outoff`);
+	} else if (bamboNumberModal.textContent === "0") {
+		bamboWin.classList.add(`outoff`);
+		bamboWindow.classList.add(`outoff`);
+	} else if (blackedNumberM.textContent === "0") {
+		blackWin.classList.add(`outoff`);
+		blackWindow.classList.add(`outoff`);
+	}
 }
 
 window.onload = () => {
 	let localTakeBa = JSON.parse(localStorage.getItem("localBambo"));
 	let localTakeBlack = JSON.parse(localStorage.getItem("localBlack"));
 	let localTakeMoh = JSON.parse(localStorage.getItem("localMoh"));
+
+	if (localTakeMoh) {
+		let localItemMohO = Object.keys(localTakeMoh);
+
+		if (localTakeMoh[localItemMohO[2]] === 0) {
+			mohoganyWinSpecial.classList.add(`outoff`);
+			mahoganyWindow.classList.add(`outoff`);
+		}
+	}
+	if (localTakeBlack) {
+		let localItemsBlackO = Object.keys(localTakeBlack);
+		if (localTakeBlack[localItemsBlackO[2]] === 0) {
+			blackWin.classList.add(`outoff`);
+			blackWindow.classList.add(`outoff`);
+		}
+	}
+	if (localTakeBa) {
+		let localItemsBaO = Object.keys(localTakeBa);
+		if (localTakeBa[localItemsBaO[2]] === 0) {
+			bamboWin.classList.add(`outoff`);
+			bamboWindow.classList.add(`outoff`);
+		}
+	}
+	if (!localTakeBa && !localTakeBlack && localTakeMoh) {
+		let localItemMoh = Object.keys(localTakeMoh);
+		mohagonyNum.innerHTML = `${localTakeMoh[localItemMoh[2]]}`;
+		mohagonyNumModal.innerHTML = `${localTakeMoh[localItemMoh[2]]}`;
+		valueBacked.innerHTML = `$${localTakeMoh[localItemMoh[1]]}`;
+		totalBackers.innerHTML = `${localTakeMoh[localItemMoh[0]]}`;
+	}
 	if (!localTakeBa && localTakeBlack) {
 		let localItemsBlack = Object.keys(localTakeBlack);
 		blackedNum.innerHTML = `${localTakeBlack[localItemsBlack[2]]}`;

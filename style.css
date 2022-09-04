@@ -350,6 +350,17 @@ nav a {
 .mohahanynmb span {
 	margin-left: -20rem;
 }
+.outoff {
+	color: hsl(0, 0%, 48%);
+	opacity: 0.6;
+}
+.outoff .pledge {
+	color: hsl(176, 72%, 28%);
+}
+.outoff input[type="button"] {
+	pointer-events: none;
+	background-color: hsl(0, 0%, 48%);
+}
 /* MODAL SECTION */
 .backthis {
 	position: fixed;
