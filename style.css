@@ -163,6 +163,7 @@ nav a {
 	height: 2vh;
 	background-color: hsl(176, 50%, 47%);
 	border-radius: 50px;
+	transition: 0.5s ease-in-out;
 }
 
 .mainbottom {

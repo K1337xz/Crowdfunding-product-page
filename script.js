@@ -38,6 +38,7 @@ const blackWin = document.querySelector(".blackedition");
 const mohagonyNumModal = document.querySelector(".mahoganModalNumber");
 const mohagonyNum = document.querySelector(".mahoganyNumber");
 const mohoganyWinSpecial = document.querySelector(".mahoganyspecial");
+const progress = document.querySelector(".progess");
 
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
@@ -150,7 +151,8 @@ window.onload = () => {
 	let localTakeBa = JSON.parse(localStorage.getItem("localBambo"));
 	let localTakeBlack = JSON.parse(localStorage.getItem("localBlack"));
 	let localTakeMoh = JSON.parse(localStorage.getItem("localMoh"));
-
+	let getProggres = JSON.parse(localStorage.getItem("progresSub"));
+	console.log(getProggres);
 	if (localTakeMoh) {
 		let localItemMohO = Object.keys(localTakeMoh);
 
@@ -218,6 +220,15 @@ window.onload = () => {
 		mohagonyNumModal.innerHTML = `${localTakeMoh[localItemMoh[2]]}`;
 		valueBacked.innerHTML = `$${localTakeMoh[localItemMoh[1]]}`;
 		totalBackers.innerHTML = `${localTakeMoh[localItemMoh[0]]}`;
+	}
+
+	if (getProggres) {
+		let localItemMohO = Object.keys(getProggres);
+		let syb = getProggres + 20;
+		if (syb === 750 || syb >= 750) {
+			progress.style.width = `750px`;
+		}
+		progress.style.width = `${syb}px`;
 	}
 };
 function showModal() {
@@ -360,10 +371,28 @@ function openInputs(input) {
 	}
 }
 
+function progresBarr() {
+	let sub = progress.offsetWidth + 5;
+	localStorage.setItem("progresSub", sub);
+
+	let getProggres = JSON.parse(localStorage.getItem("progresSub"));
+	if (getProggres) {
+		let localItemMohO = Object.keys(getProggres);
+		let syb = getProggres + 10;
+		setTimeout(() => (progress.style.width = `${syb}px`), 500);
+		console.log(syb);
+		if (syb === 750 || syb >= 750) {
+			progress.style.width = `750px`;
+		}
+	}
+}
 gotitButton.addEventListener("click", () => {
 	header.style.filter = "blur(0px)";
 	container.style.filter = "blur(0px)";
 	mainthanks.classList.remove("mainactiv");
 });
+
+gotitButton.addEventListener("click", progresBarr);
+valueBacked.addEventListener("change", progresBarr);
 topBtn.addEventListener("click", showModal);
 closeModal.addEventListener("click", closemodalWindow);
