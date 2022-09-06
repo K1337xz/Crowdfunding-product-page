@@ -95,6 +95,21 @@ nav a {
 	border: none;
 	cursor: pointer;
 	font-weight: 700;
+	transition: 0.8s ease-in-out;
+}
+.bookmark.complete {
+	background-image: url(images/icon-bookmarkgreen.png);
+	background-repeat: no-repeat;
+	width: 250px;
+	height: 56px;
+	border-radius: 300px;
+	color: hsl(176, 72%, 28%);
+	background-color: hsl(0, 0%, 98%);
+	border: none;
+	cursor: pointer;
+	font-weight: 700;
+	transition: 1s ease-in-out;
+	transform: rotateY(360deg);
 }
 .middlesquare {
 	display: flex;

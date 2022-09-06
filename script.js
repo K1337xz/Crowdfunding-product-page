@@ -392,6 +392,14 @@ gotitButton.addEventListener("click", () => {
 	mainthanks.classList.remove("mainactiv");
 });
 
+bookmarkInput.addEventListener("click", () => {
+	if (bookmarkInput.classList.contains("complete")) {
+		bookmarkInput.classList.remove("complete");
+	} else {
+		bookmarkInput.classList.add("complete");
+	}
+});
+
 gotitButton.addEventListener("click", progresBarr);
 valueBacked.addEventListener("change", progresBarr);
 topBtn.addEventListener("click", showModal);
