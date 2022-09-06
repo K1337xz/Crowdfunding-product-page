@@ -845,3 +845,123 @@ nav a {
 	margin-top: 3rem;
 	cursor: pointer;
 }
+@media screen and (max-width: 700px) {
+	header {
+		background-image: url(images/image-hero-mobile.jpg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		height: 65vh;
+		width: 100%;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		width: 50vh;
+		justify-content: space-between;
+	}
+	nav img {
+		padding: 0rem 0rem;
+		margin-left: 1rem;
+		margin-right: -1rem;
+		margin-top: 3rem;
+	}
+
+	nav ul {
+		display: none;
+	}
+	.menumobile {
+		position: absolute;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		background-color: hsl(0, 100%, 100%);
+		width: 70%;
+		height: 30%;
+		border-radius: 20px;
+		margin-left: 3.5rem;
+		margin-top: 2rem;
+		font-weight: 700;
+	}
+
+	.menumobile li {
+		list-style: none;
+		padding: 1.5em;
+		width: 39vh;
+		border-bottom: 1px solid hsl(0, 0%, 91%);
+	}
+	.menumobile a {
+		text-decoration: none;
+		color: black;
+	}
+	.openMobile {
+		display: none;
+	}
+	.topsquare {
+		width: 90%;
+		height: 40vh;
+		background-color: hsl(0, 100%, 100%);
+		margin-top: -10rem;
+		border-radius: 12px;
+		text-align: center;
+		border: 1px solid hsl(0, 0%, 91%);
+	}
+	.topsquare h1 {
+		margin-top: -2rem;
+	}
+	.logo {
+		background: url(images/logo-mastercraft.svg) no-repeat center center;
+		height: 45%;
+		width: 100%;
+		margin-top: -4rem;
+	}
+	.buttonstop {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 15vh;
+		width: 100%;
+	}
+	.bookmark {
+		display: none;
+	}
+	.bookmarkMob {
+		background-image: url(images/icon-bookmark.svg);
+		background-repeat: no-repeat;
+		width: 100px;
+		height: 56px;
+		margin-left: 2rem;
+		border-radius: 300px;
+		color: hsl(0, 0%, 48%);
+		background-color: hsl(0, 0%, 100%);
+		border: none;
+		cursor: pointer;
+		font-weight: 700;
+		transition: 0.8s ease-in-out;
+	}
+	.topbtn {
+		width: 170px;
+		height: 55px;
+		border-radius: 300px;
+		background-color: hsl(176, 50%, 47%);
+		color: hsl(0, 100%, 100%);
+		border: none;
+		font-weight: 700;
+		cursor: pointer;
+		margin-left: 2rem;
+	}
+	.values {
+		display: flex;
+		flex-direction: column;
+	}
+	.middlesquare {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 90%;
+		height: 45vh;
+		margin-top: 2rem;
+		background-color: hsl(0, 100%, 100%);
+		border: 1px solid hsl(0, 0%, 91%);
+	}
+}
