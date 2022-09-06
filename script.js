@@ -39,7 +39,7 @@ const mohagonyNumModal = document.querySelector(".mahoganModalNumber");
 const mohagonyNum = document.querySelector(".mahoganyNumber");
 const mohoganyWinSpecial = document.querySelector(".mahoganyspecial");
 const progress = document.querySelector(".progess");
-
+const bookmarkInput = document.querySelector(".bookmark");
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
 }
