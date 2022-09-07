@@ -497,7 +497,7 @@ nav a {
 	flex-direction: column;
 	border: 1px solid hsl(0, 0%, 91%);
 	width: 83vh;
-	height: 20vh;
+	height: 25vh;
 	border-radius: 12px;
 	margin-top: 2rem;
 	animation-name: slide;
@@ -632,7 +632,7 @@ nav a {
 	flex-direction: column;
 	border: 1px solid hsl(0, 0%, 91%);
 	width: 83vh;
-	height: 20vh;
+	height: 25vh;
 	border-radius: 12px;
 	margin-top: 2rem;
 }
@@ -728,7 +728,7 @@ nav a {
 	flex-direction: column;
 	border: 1px solid hsl(0, 0%, 91%);
 	width: 83vh;
-	height: 20vh;
+	height: 25vh;
 	border-radius: 12px;
 	margin-top: 2rem;
 }
@@ -862,7 +862,7 @@ nav a {
 	nav {
 		display: flex;
 		align-items: center;
-		width: 50vh;
+		width: 85%;
 		justify-content: space-between;
 	}
 	nav img {
@@ -900,7 +900,7 @@ nav a {
 		color: black;
 	}
 	.openMobile {
-		display: none;
+		display: block;
 	}
 	.topsquare {
 		width: 90%;
@@ -958,6 +958,7 @@ nav a {
 	.values {
 		display: flex;
 		flex-direction: column;
+		text-align: center;
 	}
 	.middlesquare {
 		display: flex;
@@ -965,10 +966,11 @@ nav a {
 		justify-content: center;
 		flex-direction: column;
 		width: 90%;
-		height: 45vh;
+		height: 50vh;
 		margin-top: 2rem;
 		background-color: hsl(0, 100%, 100%);
 		border: 1px solid hsl(0, 0%, 91%);
+		border-radius: 10px;
 	}
 	.valueBacked {
 		border-right: 0px solid white;
@@ -997,5 +999,450 @@ nav a {
 		border-right: 0px solid hsl(0, 0%, 48%);
 		height: 50px;
 		width: 150px;
+	}
+	.bar {
+		width: 95%;
+		background-color: hsl(0, 4%, 91%);
+		height: 2vh;
+		border-radius: 50px;
+	}
+	.progess {
+		width: 30vh;
+		height: 2vh;
+		background-color: hsl(176, 50%, 47%);
+		border-radius: 50px;
+		transition: 0.5s ease-in-out;
+	}
+	.mainbottom {
+		width: 90%;
+		height: 100%;
+		background-color: hsl(0, 100%, 100%);
+		margin-top: 2rem;
+		border-radius: 12px;
+		border: 1px solid hsl(0, 0%, 91%);
+		padding: 3rem 5rem;
+	}
+	.aboutcl {
+		width: 95%;
+	}
+	.navbambo {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: space-between;
+		padding: 0rem 1rem;
+		margin-bottom: -3rem;
+	}
+	.mainbottom h3 {
+		font-weight: 700;
+		margin-bottom: 1px;
+		font-size: 20px;
+	}
+	.bambo {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsl(0, 0%, 91%);
+		width: auto;
+		height: 50%;
+		border-radius: 12px;
+		padding: 2rem 1rem;
+	}
+	.bambocontent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-left: 1rem;
+		margin-top: 5rem;
+	}
+	.bambolower {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem 4rem;
+		align-content: center;
+		justify-content: space-around;
+	}
+	.bambo span {
+		font-weight: 400;
+		margin-left: 0rem;
+	}
+	.blackedition {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsl(0, 0%, 91%);
+		width: auto;
+		height: 50%;
+		border-radius: 12px;
+		padding: 2rem 1rem;
+		margin-top: 2rem;
+	}
+	.blacknav {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: space-between;
+		padding: 0rem 1rem;
+		margin-bottom: -3rem;
+	}
+	.blackcontent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-left: 1rem;
+		margin-top: 3rem;
+	}
+	.blackinp {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem 4rem;
+		align-content: center;
+		justify-content: space-around;
+	}
+	.blackinp span {
+		margin-left: 0rem;
+	}
+	.mahoganyspecial {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsl(0, 0%, 91%);
+		width: auto;
+		height: 50%;
+		border-radius: 12px;
+		padding: 2rem 1rem;
+	}
+	.mohognaynav {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: space-between;
+		padding: 0rem 1rem;
+		margin-bottom: -3rem;
+	}
+	.mohganycontent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-left: 1rem;
+		margin-top: 3rem;
+	}
+	.mohahanynmb {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1rem 4rem;
+		align-content: center;
+		justify-content: space-around;
+	}
+	.mohahanynmb span {
+		margin-left: 0rem;
+	}
+	/* mobile backthis */
+	.backthis {
+		position: fixed;
+		top: 10vh;
+		left: 2%;
+		width: 96%;
+		height: 80vh;
+		margin: 0;
+		padding: 3rem 1.5rem;
+		overflow-y: scroll;
+		outline: none;
+		border: none;
+		box-shadow: 0 0 3rem rgb(0 0 0 / 50%);
+		z-index: 3;
+		overflow-x: hidden;
+		background-color: hsl(0, 100%, 100%);
+		scrollbar-width: none;
+		visibility: hidden;
+		transform: scaleY(0);
+		transition: 0.5s ease-in-out;
+		border-radius: 20px;
+	}
+	.active {
+		transform: scaleY(1);
+		transition: 0.5s ease-in-out;
+	}
+	.closemodal {
+		background-image: url(images/icon-close-modal.svg);
+		background-repeat: no-repeat;
+		width: 23px;
+		background-size: contain;
+		cursor: pointer;
+		margin-top: -2rem;
+		margin-right: -1rem;
+	}
+	.navback {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 0rem;
+	}
+	.noreward {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsl(0, 0%, 91%);
+		width: 100%;
+		height: 49vh;
+		border-radius: 12px;
+		margin-top: 2rem;
+		padding: 1rem 1rem;
+	}
+	.noreward input[type="checkbox"] {
+		width: 25px;
+		height: 25px;
+		margin-right: 3rem;
+		margin-left: 0rem;
+		background-color: white;
+		border-radius: 50%;
+		vertical-align: middle;
+		border: 1px solid #ddd;
+		appearance: none;
+		-webkit-appearance: none;
+		outline: none;
+		cursor: pointer;
+	}
+	.lowerno {
+		display: none;
+		align-items: center;
+		text-align: center;
+		justify-content: space-around;
+		border-top: 1px solid hsl(0, 0%, 91%);
+		margin-right: -5rem;
+		margin-left: 0rem;
+		width: 100%;
+		flex-direction: column;
+	}
+	.bamboNumber,
+	.blackeditionNumber,
+	.blackeditionNumberModal,
+	.mahoganyNumberM,
+	.bamboNumberModal {
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	.pledgeLower {
+		width: 110px;
+		height: 30px;
+		border-radius: 300px;
+		color: hsl(0, 0%, 0%);
+		border: 1px solid hsl(0, 0%, 91%);
+		margin-right: 0rem;
+		font-weight: 700;
+		cursor: pointer;
+		margin-bottom: 1rem;
+		padding-left: 1rem;
+	}
+	.noreward input.continue {
+		width: 150px;
+		height: 30px;
+		border-radius: 300px;
+		background-color: hsl(176, 50%, 47%);
+		color: hsl(0, 100%, 100%);
+		border: none;
+		font-weight: 700;
+		cursor: pointer;
+	}
+	.bambostand {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsl(0, 0%, 91%);
+		width: 100%;
+		height: 65vh;
+		border-radius: 12px;
+		margin-top: 2rem;
+		padding: 1rem 1rem;
+		animation-name: slide;
+		animation-delay: 0.5s;
+		animation-timing-function: ease-out;
+	}
+	.topb {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 2rem;
+		margin-left: 3rem;
+		margin-top: 1rem;
+	}
+	.bambostand label {
+		cursor: pointer;
+		color: hsl(0, 0%, 0%);
+		font-weight: 700;
+		margin-right: 2rem;
+		margin-left: 0rem;
+	}
+	.bmb {
+		margin-left: 2rem;
+		margin-right: 0rem;
+	}
+	.pledgemodal {
+		color: hsl(176, 50%, 47%);
+		margin-left: 1rem;
+	}
+	.bamboinpmodal {
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 1rem;
+		padding: 1rem 2rem;
+		border-top: 1px solid hsl(0, 0%, 91%);
+		transition: 0.5s ease-in-out;
+		flex-direction: column;
+	}
+	.pledgeBambo {
+		width: 110px;
+		height: 30px;
+		border-radius: 300px;
+		color: hsl(0, 0%, 0%);
+		border: 1px solid hsl(0, 0%, 91%);
+		margin-right: 0rem;
+		font-weight: 700;
+		cursor: pointer;
+		margin-bottom: 1rem;
+		padding-left: 1rem;
+	}
+	.blackedit {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsl(0, 0%, 91%);
+		width: 100%;
+		height: 65vh;
+		border-radius: 12px;
+		margin-top: 2rem;
+		padding: 1rem 1rem;
+		animation-name: slide;
+		animation-delay: 0.5s;
+		animation-timing-function: ease-out;
+	}
+	.topblack {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 2rem;
+		margin-left: 3rem;
+		margin-top: 1rem;
+	}
+	.blackedit label {
+		cursor: pointer;
+		color: hsl(0, 0%, 0%);
+		font-weight: 700;
+		margin-right: 2rem;
+		margin-left: 0rem;
+	}
+	.spc {
+		margin-left: 2rem;
+		margin-right: -1rem;
+	}
+	.inpblackmodal {
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 1rem;
+		margin-left: 2rem;
+		padding: 1rem 2rem;
+		border-top: 1px solid hsl(0, 0%, 91%);
+		transition: 0.5s ease-in-out;
+		flex-direction: column;
+	}
+	.pledgeBlack {
+		width: 110px;
+		height: 45px;
+		border-radius: 300px;
+		color: hsl(0, 0%, 0%);
+		border: 1px solid hsl(0, 0%, 91%);
+		margin-right: -10rem;
+		font-weight: 700;
+		cursor: pointer;
+		margin-left: -10rem;
+		padding-left: 1rem;
+	}
+	.mahoganymodal {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsl(0, 0%, 91%);
+		width: 100%;
+		height: 65vh;
+		border-radius: 12px;
+		margin-top: 2rem;
+		padding: 1rem 1rem;
+		animation-name: slide;
+		animation-delay: 0.5s;
+		animation-timing-function: ease-out;
+	}
+	.mahoganytop {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 2rem;
+		margin-left: 3rem;
+		margin-top: 1rem;
+	}
+	.mahoganymodal label {
+		cursor: pointer;
+		color: hsl(0, 0%, 0%);
+		font-weight: 700;
+		margin-right: 0rem;
+		margin-left: 0rem;
+	}
+	.mhm {
+		margin-left: 2rem;
+		margin-right: -1rem;
+	}
+	.inpmohagony {
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 1rem;
+		margin-left: 2rem;
+		padding: 1rem 2rem;
+		border-top: 1px solid hsl(0, 0%, 91%);
+		transition: 0.5s ease-in-out;
+		flex-direction: column;
+	}
+	.pledgeMohagony {
+		width: 110px;
+		height: 45px;
+		border-radius: 300px;
+		color: hsl(0, 0%, 0%);
+		border: 1px solid hsl(0, 0%, 91%);
+		margin-right: 0rem;
+		font-weight: 700;
+		cursor: pointer;
+		padding-left: 1rem;
+	}
+	.mainthanks {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		position: fixed;
+		top: 30vh;
+		left: 15%;
+		width: 45vh;
+		height: 40vh;
+		margin: 0;
+		padding: 3rem 1.5rem;
+		outline: none;
+		border: none;
+		box-shadow: 0 0 3rem rgb(0 0 0 / 50%);
+		z-index: 3;
+		overflow-x: hidden;
+		background-color: hsl(0, 100%, 100%);
+		visibility: visible;
+		transform: scaleY(0);
+		transition: 0.5s ease-in-out;
+		border-radius: 20px;
+	}
+	.mainactiv {
+		transform: scaleY(1);
+		transition: 0.5s ease-in-out;
 	}
 }

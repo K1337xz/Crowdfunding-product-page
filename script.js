@@ -40,6 +40,10 @@ const mohagonyNum = document.querySelector(".mahoganyNumber");
 const mohoganyWinSpecial = document.querySelector(".mahoganyspecial");
 const progress = document.querySelector(".progess");
 const bookmarkInput = document.querySelector(".bookmark");
+const openMobile = document.querySelector(".openMobile");
+const closeMobile = document.querySelector(".closeMobile");
+const topSquar = document.querySelector(".topsquare");
+const menuMob = document.querySelector(".menumobile");
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
 }
@@ -242,7 +246,6 @@ function showModal() {
 				}),
 			500
 		);
-		bamboWindow.style.height = `25vh`;
 		inpBambo.checked = true;
 		inpBlack.checked = false;
 		mahogany.checked = false;
@@ -263,7 +266,6 @@ function showModal() {
 				}),
 			500
 		);
-		blackWindow.style.height = `25vh`;
 		inpBlack.checked = true;
 		inpBambo.checked = false;
 		mahogany.checked = false;
@@ -284,7 +286,6 @@ function showModal() {
 				}),
 			500
 		);
-		mahoganyWindow.style.height = `25vh`;
 		mahogany.checked = true;
 		inpBlack.checked = false;
 		inpBambo.checked = false;
@@ -332,9 +333,6 @@ function openInputs(input) {
 		blackWindow.style.border = `1px solid hsl(0, 0%, 91%)`;
 		bamboWindow.style.border = `1px solid hsl(0, 0%, 91%)`;
 	} else if (num === "bambo" && input.checked) {
-		blackWindow.style.height = `20vh`;
-		mahoganyWindow.style.height = `20vh`;
-		bamboWindow.style.height = `25vh`;
 		bamboInputs.style.display = `flex`;
 		blackInputs.style.display = `none`;
 		mohoganyInputs.style.display = `none`;
@@ -345,9 +343,6 @@ function openInputs(input) {
 		mahoganyWindow.style.border = `1px solid hsl(0, 0%, 91%)`;
 	} else if (num === "black" && input.checked) {
 		errBambo.innerText = ``;
-		blackWindow.style.height = `25vh`;
-		bamboWindow.style.height = `20vh`;
-		mahoganyWindow.style.height = `20vh`;
 		bamboInputs.style.display = `none`;
 		blackInputs.style.display = `flex`;
 		mohoganyInputs.style.display = `none`;
@@ -357,9 +352,6 @@ function openInputs(input) {
 		mahoganyWindow.style.border = `1px solid hsl(0, 0%, 91%)`;
 		norewardWindow.style.border = `1px solid hsl(0, 0%, 91%)`;
 	} else if (num === `mahogany` && input.checked) {
-		mahoganyWindow.style.height = `25vh`;
-		bamboWindow.style.height = `20vh`;
-		blackWindow.style.height = `20vh`;
 		bamboInputs.style.display = `none`;
 		blackInputs.style.display = `none`;
 		mohoganyInputs.style.display = `flex`;
@@ -386,6 +378,17 @@ function progresBarr() {
 		}
 	}
 }
+openMobile.addEventListener("click", () => {
+	openMobile.style.display = `none`;
+	closeMobile.style.display = `block`;
+	menuMob.style.display = `flex`;
+	topSquar.style.marginTop = `-8rem`;
+});
+closeMobile.addEventListener("click", () => {
+	closeMobile.style.display = `none`;
+	menuMob.style.display = `none`;
+	topSquar.style.marginTop = `-10rem`;
+});
 gotitButton.addEventListener("click", () => {
 	header.style.filter = "blur(0px)";
 	container.style.filter = "blur(0px)";
