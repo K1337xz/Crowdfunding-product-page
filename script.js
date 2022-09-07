@@ -44,6 +44,8 @@ const openMobile = document.querySelector(".openMobile");
 const closeMobile = document.querySelector(".closeMobile");
 const topSquar = document.querySelector(".topsquare");
 const menuMob = document.querySelector(".menumobile");
+const bookmarkMob = document.querySelector(".bookmarkMob ");
+
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
 }
@@ -382,12 +384,11 @@ openMobile.addEventListener("click", () => {
 	openMobile.style.display = `none`;
 	closeMobile.style.display = `block`;
 	menuMob.style.display = `flex`;
-	topSquar.style.marginTop = `-8rem`;
 });
 closeMobile.addEventListener("click", () => {
+	openMobile.style.display = `block`;
 	closeMobile.style.display = `none`;
 	menuMob.style.display = `none`;
-	topSquar.style.marginTop = `-10rem`;
 });
 gotitButton.addEventListener("click", () => {
 	header.style.filter = "blur(0px)";
@@ -403,6 +404,13 @@ bookmarkInput.addEventListener("click", () => {
 	}
 });
 
+bookmarkMob.addEventListener("click", () => {
+	if (bookmarkMob.classList.contains("complete")) {
+		bookmarkMob.classList.remove("complete");
+	} else {
+		bookmarkMob.classList.add("complete");
+	}
+});
 gotitButton.addEventListener("click", progresBarr);
 valueBacked.addEventListener("change", progresBarr);
 topBtn.addEventListener("click", showModal);
