@@ -45,6 +45,9 @@ const closeMobile = document.querySelector(".closeMobile");
 const topSquar = document.querySelector(".topsquare");
 const menuMob = document.querySelector(".menumobile");
 const bookmarkMob = document.querySelector(".bookmarkMob ");
+const mahoganyBtn = document.querySelector(".mahoganyBtn");
+const bamboBtn = document.querySelector(".bamboBtn");
+const blackeditionBtn = document.querySelector(".blackeditionBtn");
 
 for (let i = 0; i < inp.length; i++) {
 	inp[i].addEventListener("click", showModal);
@@ -144,12 +147,15 @@ function continuePledge() {
 	if (mohagonyNumModal.textContent === `0`) {
 		mohoganyWinSpecial.classList.add(`outoff`);
 		mahoganyWindow.classList.add(`outoff`);
+		mahoganyBtn.value = `Out of stock`;
 	} else if (bamboNumberModal.textContent === "0") {
 		bamboWin.classList.add(`outoff`);
 		bamboWindow.classList.add(`outoff`);
+		bamboBtn.value = `Out of stock`;
 	} else if (blackedNumberM.textContent === "0") {
 		blackWin.classList.add(`outoff`);
 		blackWindow.classList.add(`outoff`);
+		blackeditionBtn.value = `Out of stock`;
 	}
 }
 
@@ -165,6 +171,7 @@ window.onload = () => {
 		if (localTakeMoh[localItemMohO[2]] === 0) {
 			mohoganyWinSpecial.classList.add(`outoff`);
 			mahoganyWindow.classList.add(`outoff`);
+			mahoganyBtn.value = `Out of stock`;
 		}
 	}
 	if (localTakeBlack) {
@@ -172,6 +179,7 @@ window.onload = () => {
 		if (localTakeBlack[localItemsBlackO[2]] === 0) {
 			blackWin.classList.add(`outoff`);
 			blackWindow.classList.add(`outoff`);
+			blackeditionBtn.value = `Out of stock`;
 		}
 	}
 	if (localTakeBa) {
@@ -179,6 +187,7 @@ window.onload = () => {
 		if (localTakeBa[localItemsBaO[2]] === 0) {
 			bamboWin.classList.add(`outoff`);
 			bamboWindow.classList.add(`outoff`);
+			bamboBtn.value = `Out of stock`;
 		}
 	}
 	if (!localTakeBa && !localTakeBlack && localTakeMoh) {
