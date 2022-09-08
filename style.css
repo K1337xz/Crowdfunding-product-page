@@ -955,7 +955,6 @@ nav a {
 		height: 56px;
 		border-radius: 300px;
 		color: hsl(176, 72%, 28%);
-		background-color: hsl(0, 0%, 98%);
 		border: none;
 		cursor: pointer;
 		font-weight: 700;
@@ -1025,7 +1024,7 @@ nav a {
 		border-radius: 50px;
 	}
 	.progess {
-		width: 30vh;
+		width: 10%;
 		height: 2vh;
 		background-color: hsl(176, 50%, 47%);
 		border-radius: 50px;
@@ -1420,6 +1419,7 @@ nav a {
 		display: none;
 		align-items: center;
 		justify-content: space-between;
+		height: 50%;
 		margin-top: 1rem;
 		margin-left: 2rem;
 		padding: 1rem 2rem;
